@@ -5,6 +5,8 @@ Builds component tree and manages routes and subroutes using single routes confi
 
 Routes builder usage example: 
 ```javaScript
+import { AppRoutes, NavList, redirectToRoute } from "react-nav-route-builder"
+
 <Router>
     <Suspense fallback="is loading ...">
     <div className="App">
