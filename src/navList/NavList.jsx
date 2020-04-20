@@ -38,9 +38,9 @@ NavList.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       pageType: PropTypes.string,
-      title: PropTypes.string,
+      title: PropTypes.any,
       path: PropTypes.string,
-      component: PropTypes.node,
+      component: PropTypes.any,
       exact: PropTypes.bool,
       redirect: PropTypes.func,
   })),
