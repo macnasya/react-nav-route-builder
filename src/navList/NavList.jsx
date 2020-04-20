@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { classList } from '../helpers';
+import { classList } from './helpers';
 import NavListItem from './NavListItem';
 
 /**

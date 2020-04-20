@@ -1,4 +1,4 @@
-import AppRoutes, { redirectToRoute } from './AppRoutes';
+import AppRoutes, { redirectToRoute } from './appRoutes';
 import NavList from './navList';
 
 export {
