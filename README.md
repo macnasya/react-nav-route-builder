@@ -71,3 +71,4 @@ NavList usage example:
 ```javaScript
 <NavList navLink={NavLink} routes={routesConfig} classNameList="main-header__nav-list" />
 ```
+&copy; 2020 Nastassia Makarava

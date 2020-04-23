@@ -16,7 +16,7 @@
     "subroute"
   ],
   "author": "Nastassia Makarava",
-  "license": "ISC",
+  "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
   },
