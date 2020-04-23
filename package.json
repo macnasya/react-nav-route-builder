@@ -1,6 +1,6 @@
 {
   "name": "react-nav-route-builder",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "React navigation and route builder",
   "main": "dist/main.js",
   "scripts": {
