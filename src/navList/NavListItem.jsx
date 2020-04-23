@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { classList } from './helpers';
 
 /**
@@ -16,9 +15,11 @@ import { classList } from './helpers';
 const NavListItem = ({
   route = {},
   children = null,
+  navLink: NavLink,
 }) => {
   const { path, title, pageType } = route
   const classNameNavListItem = pageType && pageType.toLowerCase().replace('_', '-' )
+
   return (
     <li
       className={classList(

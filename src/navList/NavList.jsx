@@ -14,6 +14,7 @@ const NavList = ({
   routes = [],
   className,
   isSubNav,
+  navLink,
 }) => {
   return (
     <ul className={classList(
@@ -25,8 +26,8 @@ const NavList = ({
         const { path, routes } = route
         const hasSubNav = routes && routes.length
         return (
-          <NavListItem key={path} route={route}>
-            {hasSubNav && <NavList routes={routes} isSubNav />}
+          <NavListItem key={path} route={route} navLink={navLink}>
+            {hasSubNav && <NavList routes={routes} navLink={navLink} isSubNav />}
           </NavListItem>
         )
       }, NavList)}
@@ -38,7 +39,7 @@ NavList.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       pageType: PropTypes.string,
-      title: PropTypes.any,
+      title: PropTypes.node,
       path: PropTypes.string,
       component: PropTypes.any,
       exact: PropTypes.bool,

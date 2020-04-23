@@ -5,6 +5,7 @@ Builds component tree and manages routes and subroutes using single routes confi
 
 Routes builder usage example: 
 ```javaScript
+import { BrowserRouter as Router, Route, Redirect, Switch, NavLink } from 'react-router-dom';
 import { AppRoutes, NavList, redirectToRoute } from "react-nav-route-builder"
 
 <Router>
@@ -15,7 +16,7 @@ import { AppRoutes, NavList, redirectToRoute } from "react-nav-route-builder"
         <Route
             path="/"
             render={(props) => (
-                <AppRoutes routes={routesConfig} {...props} />
+                <AppRoutes routes={routesConfig} {...props} route={Route} redirect={Redirect} />
             )}
         >
         </Route>
@@ -68,5 +69,5 @@ Renders navigation components tree using routes configuration.
 
 NavList usage example:
 ```javaScript
-<NavList routes={routesConfig} classNameList="main-header__nav-list" classNameListItem='list-item' />
+<NavList navLink={NavLink} routes={routesConfig} classNameList="main-header__nav-list" />
 ```

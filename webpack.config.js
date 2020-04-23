@@ -1,4 +1,5 @@
-var path = require("path");
+const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     output: {
@@ -7,6 +8,7 @@ module.exports = {
       libraryTarget: "umd",
       umdNamedDefine: true
     },
+    plugins: [new MiniCssExtractPlugin()],
     module: {
       rules: [
         {
@@ -16,13 +18,25 @@ module.exports = {
           use: {
             loader: "babel-loader"
           }
-        }
+        },
+        {
+          test: /\.css$/i,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                esModule: true,
+              },
+            },
+            'css-loader',
+          ]
+        },
       ]
     },
     resolve: {
         extensions: ['.js', '.jsx'],
     },
-    externals: {           
+    externals: {          
       react: {          
           commonjs: "react",          
           commonjs2: "react",          
@@ -30,10 +44,16 @@ module.exports = {
           root: "React"      
       },      
       "react-dom": {          
-          commonjs: "react-dom",          
-          commonjs2: "react-dom",          
-          amd: "ReactDOM",          
-          root: "ReactDOM"      
-      }  
-    } 
+        commonjs: "react-dom",          
+        commonjs2: "react-dom",          
+        amd: "ReactDOM",          
+        root: "ReactDOM"      
+      },
+      "react-router-dom": {          
+        commonjs: "react-router-dom",          
+        commonjs2: "react-router-dom",          
+        amd: "ReactRouterDOM",          
+        root: "ReactRouterDOM"      
+      },
+} 
   };
